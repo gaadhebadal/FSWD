@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+    <label for="ageInput">Enter your age:</label>
+    <input type="text" id="ageInput">
+    <button onclick="checkAge()">Submit</button>
+    </form>
+    <script>
+        function checkAge() {
+            var ageInput = document.getElementById("ageInput").value;
+            var age = parseInt(ageInput);
+
+            if (isNaN(age)) {
+                console.log("Invalid input. Please enter a valid age.");
+            } else {
+                if (age < 18) {
+                    console.log("You are a minor.");
+                } else if (age >= 18 && age <= 65) {
+                    console.log("You are an adult.");
+                } else {
+                    console.log("You are a senior citizen.");
+
+                }
+            }
+        }
+
+    </script>
+</body>
+
+</html>

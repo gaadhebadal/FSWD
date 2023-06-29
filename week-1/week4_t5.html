@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var favoriteBooks = [
+            "Love Life",
+            "2003",
+            "Pride and Prejudice",
+            "The Great Gatsby",
+            "The Catcher in the Rye"
+        ];
+        function displayBookTitles(books) {
+            console.log("My Favorite Books:");
+            console.log("-----");
+
+            for (var i = 0; i < books.length; i++) {
+                console.log(books[i]);
+            }
+        }
+        // Call the function with the favoriteBooks array
+        displayBookTitles(favoriteBooks);
+    </script>
+
+</body>
+
+</html>
