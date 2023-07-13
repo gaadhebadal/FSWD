@@ -30,7 +30,4 @@ function compareFiles(file1Path, file2Path) {
     }
   }
 }
-
-
-
 compareFiles(file1Path, file2Path);
