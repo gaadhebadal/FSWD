@@ -1,7 +1,4 @@
 const fs = require('fs');
-// Usage example
-const file1Path = 'student-data.txt';
-const file2Path = 'h.txt';
 
 function compareFiles(file1Path, file2Path) {
   const file1Stats = fs.statSync(file1Path);
@@ -30,4 +27,9 @@ function compareFiles(file1Path, file2Path) {
     }
   }
 }
+
+// Usage example
+const file1Path = 'file1.txt';
+const file2Path = 'file2.txt';
+
 compareFiles(file1Path, file2Path);
