@@ -1,11 +1,19 @@
 const fs = require('fs');
 
-const fileContents = fs.readFileSync('student-data.txt', 'utf-8');
-const students = fileContents.split('\n');
-
-const filteredStudents = students.filter((student) => {
-  const [name, cgpa] = student.split(',');
-  return name.includes('MA') && parseFloat(cgpa) > 7;
+// Read the file
+fs.readFile('student-data.txt', 'utf8', (err, data) => {
+  if (err) {
+    console.error('Error reading file:', err);
+    return;
+  }
+  // Process the file content
+  const students = data.split('\n');
+  const filteredStudents = students.filter((student) => {
+    const [name, cgpa] = student.split(',');
+    // Check if name contains 'MA' and CGPA > 7
+    return name.includes('Ba') && parseFloat(cgpa) > 7;
+  });
+  // Print the filtered students
+  console.log('Filtered Students:');
+  filteredStudents.forEach((student) => console.log(student));
 });
-
-console.log(filteredStudents);
