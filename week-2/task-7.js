@@ -1,6 +1,6 @@
 const fs = require("fs");
+const readline = require("readline");
 
-// Function to create a file backup
 function createFileBackup() {
   const sourceFile = "file1.txt";
   const backupFile = "file1_new.txt";
@@ -12,10 +12,10 @@ function createFileBackup() {
     }
   });
 }
-// Function to restore the file from backup
+
 function restoreFileFromBackup() {
   const backupFile = "file1_new.txt";
-  const restoredFile = "file1.txt"; // Corrected filename here
+  const restoredFile = "file1.txt";
   fs.copyFile(backupFile, restoredFile, (err) => {
     if (err) {
       console.error("Error restoring file from backup:", err);
@@ -24,15 +24,26 @@ function restoreFileFromBackup() {
     }
   });
 }
-// Usage
-createFileBackup();
+function askFromUser() {
+  const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+  });
 
-// Simulating some changes to the original file (file1.txt)
-fs.writeFile("file1.txt", "Modified content", (err) => {
-  if (err) {
-    console.error("Error modifying the original file:", err);
-  } else {
-    console.log("Original file modified.");
-    restoreFileFromBackup();
-  }
-});
+  rl.question(
+    "Which function would you like to call? (Type 'b'for backup or 'r' for restore): ",
+    (answer) => {
+      rl.close();
+      if (answer === "b") {
+        createFileBackup();
+      } else if (answer === "r") {
+        restoreFileFromBackup();
+      } else {
+        console.log("Invalid input. Please type 'b' or 'r'.");
+      }
+    }
+  );
+}
+// Call the function to ask the user
+askFromUser();
+
