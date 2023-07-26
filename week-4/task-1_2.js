@@ -7,7 +7,7 @@ function resolveURL(baseURL, relativePath) {
   console.log('Absolute URL:', resolvedURL.href);
 }
 // Example usage
-const baseURL = 'https://www.example.com/';
+const baseURL = 'https://www.example.com/hi/';
 const relativePath = 'path/to/resolved/';
 
 resolveURL(baseURL, relativePath);
