@@ -21,3 +21,4 @@ rl.question("Enter the file path: ", (filePath) => {
   checkFilePathExists(filePath);
   rl.close();
 });
+
